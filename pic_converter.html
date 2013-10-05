@@ -1,0 +1,48 @@
+<html>
+<head>
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+</head>
+<body>
+<img src="pics/generic.jpg"></img>
+<p>Test</p>
+<script type="text/javascript">
+$(document).ready(function() {
+	function resize_images(maxht, maxwt, minht, minwt) {
+	  var imgs = document.getElementsByTagName('img');
+
+	  var resize_image = function(img, newht, newwt) {
+	    img.height = newht;
+	    img.width  = newwt;
+	  };
+	  
+	  for (var i = 0; i < imgs.length; i++) {
+	    var img = imgs[i];
+	    if (img.height > maxht || img.width > maxwt) {
+	      // Use Ratios to constraint proportions.
+	      var old_ratio = img.height / img.width;
+	      var min_ratio = minht / minwt;
+	      // If it can scale perfectly.
+	      if (old_ratio === min_ratio) {
+	        resize_image(img, minht, minwt);
+	      } 
+	      else {
+	        var newdim = [img.height, img.width];
+	        newdim[0] = minht;  // Sort out the height first
+	        // ratio = ht / wt => wt = ht / ratio.
+	        newdim[1] = newdim[0] / old_ratio;
+	        // Do we still have to sort out the width?
+	        if (newdim[1] > maxwt) {
+	          newdim[1] = minwt;
+	          newdim[0] = newdim[1] * old_ratio;
+	        }
+	        resize_image(img, newdim[0], newdim[1]);
+	      }
+	    }
+	  }
+	}
+	resize_images(150, 150, 150, 150);
+});
+</script>
+</body>
+</html>
