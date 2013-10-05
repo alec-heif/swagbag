@@ -1,4 +1,4 @@
-wiki-minaj
+clothes-picker
 ==========
 
 HackMIT project
