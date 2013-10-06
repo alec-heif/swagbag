@@ -24,40 +24,6 @@
 
 <div class="header"></div>
 
-    <div class="container">
-
-      <div class="starter-template">
-        <h1>Bootstrap starter template</h1>
-        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
-        <div id="draggable" class="ui-widget-content">
-          <!--<img src="pics/generic.jpg" height="150" width="125" alt="">-->
-          <p>Drag me!</p>
-        </div>
-        <script>
-          $(function() {
-            $( "#draggable" ).draggable();
-            $( "#draggable" ).draggable({ containment: "document", opacity: 0.8, refreshPositions: true, revert: "invalid", scroll: false});
-          });
-          function updateDate(event, ui) {
-            document.getElementById("output").innerHTML=Date.now();
-          }
-          $( "#draggable" ).on( "drag", updateDate );
-
-        </script>
-        <p id="output">Test</p>
-      </div>
-
-    </div><!-- /.container -->
-
-
-
-
-
-
-
-
-<div class="header"></div>
-
 <div class="container">
 
     <div class="row-fluid">
