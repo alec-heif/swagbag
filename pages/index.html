@@ -21,8 +21,8 @@
     <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
     <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
     <style>
-    #draggable { width: 150px; height: 150px; padding: 0.5em; }
-    #droppable {width: 150px; height: 150px; padding: 6em; float: right; }
+    .draggable { width: 150px; height: 150px; padding: 0.5em; }
+    .droppable {width: 150px; height: 150px; padding: 6em; float: right; }
     </style>
 
 
@@ -60,18 +60,24 @@
       <div class="starter-template">
         <h1>Bootstrap starter template</h1>
         <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
-        <div id="draggable" class="ui-widget-content">
+        <div id="draggable" class="ui-widget-content draggable">
           <img src="../pics/generic.jpg" height="150" width="150" alt="">
         </div>
-        <div id="droppable" class="ui-widget-header">
-          <img src="../pics/generic.jpg" height="150" width="150" alt="">
-        </div>
+      <div id="bag" class="droppable">
+          <h1 class="ui-widget-header">Bag O' Swag</h1>
+          <div class="ui-widget-content">
+              <ol>
+                  <li class="placeholder">Add your items here</li>
+              </ol>
+          </div>
+      </div>
         <script>
           $(function() {
             $( "#draggable").draggable();
             $( "#draggable" ).draggable({ containment: "document", opacity: 0.8, refreshPositions: true, revert: "invalid", scroll: false});
           });
-          $( "#droppable" ).droppable({
+          $( "#droppable" ).droppable({ accept: ".draggable", tolerance: "touch",
+
             drop: function( event, ui ) {
               $('#droppable').css({ opacity: 0.5 });
               alert('test');
