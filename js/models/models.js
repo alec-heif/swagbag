@@ -1,10 +1,14 @@
-var Freebie = Backbone.Model.extend({
+window.Freebie = Backbone.Model.extend({
+  urlRoot: "/freebies",
+
+  idAttribute: "_id",
+
   initialize: function(){
       console.log('This model has been initialized.');
   }
 
   defaults: {
-    urls: {'', ''},
+    urls: {'link': "", 'img': ""},
     item: {"category" : "", "type" : ""},
     name: "",
     brand: "", 
@@ -13,26 +17,11 @@ var Freebie = Backbone.Model.extend({
 
 });
 
-// We can then create our own concrete instance of a (Todo) model
-// with no values at all:
-var freebie1 = new Freebie();
-var freebie1Attributes = freebie1.toJSON();
-// Following logs: {}
-console.log(JSON.stringify(todo1));
+window.FreebieCollection = Backbone.Collection.extend({
 
-// or with some arbitrary data:
-var todo2 = new Todo({
-  title: 'Check the attributes of both model instances in the console.',
-  completed: true
+    model: Freebie,
+
+    url: "/freebies"
+
 });
 
-// Following logs: {"title":"Check the attributes of both model instances in the console.","completed":true}
-console.log(JSON.stringify(todo2));
-
-var todo3 = new Todo({
-  title: 'This todo is done, so take no action on this one.',
-  completed: true
-});
-
-// Following logs: {"title":"This todo is done, so take no action on this one.","completed":true} 
-console.log(JSON.stringify(todo3));
