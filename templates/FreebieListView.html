@@ -1,6 +1,74 @@
-<a href="#freebies/<%= _id %>" class="thumbnail plain" style="text-align: center;">
-    <img src="<%= picture === null ? 'pics/generic.jpg' : 'pics/' + picture %>" height="300" width="300" alt="<%= name %>">
-    <h5><%= name %></h5>
-    <%= year %> <%= grapes %><br/>
-    <i class="icon-globe"></i> <%= region %>, <%= country %>
-</a>
+<div class="ui-widget-content draggable">
+	<a href="#freebies/<%= _id %>" class="thumbnail plain" style="text-align: center;">
+	    <img src="<%= picture === null ? 'pics/generic.jpg' : 'pics/' + picture %>" height="300" width="300" alt="<%= name %>">
+	</a>
+</div>
+
+	<script>
+	
+		/*var tbl = document.createElement("table");
+		
+		function Hello(){
+			alert("Hello!");
+		}
+		
+		function addElement(){
+			var table = document.getElementById("myTable");
+			var lastRow = table.rows[table.rows.length - 1];
+			if(lastRow.cells.length == 4){
+				lastRow = table.insertRow(-1);
+			}
+			var cell = lastRow.insertCell(-1);
+			var image = '<img class="swagpic" src="pics/generic.jpg" alt="">'
+			var draggable = '<div class="ui-widget-content draggable">' + image +  '</div>'
+			cell.innerHTML = draggable
+			$(function() {
+				$( ".draggable" ).draggable();
+				$( ".draggable" ).draggable({ containment: "document", opacity: 0.8, refreshPositions: true, revert: "invalid", scroll: false});
+			});
+		}
+
+		$(document).ready(function() {
+	function resize_images(url) {
+		maxht=300;
+		maxwt=300;
+		minht=300;
+		minwt=300;
+	  var img = document.createElement('img');
+	  	img.src=url;
+	  	img.
+
+	  var resize_image = function(img, newht, newwt) {
+	    img.height = newht;
+	    img.width  = newwt;
+	  };
+	  
+	  for (var i = 0; i < imgs.length; i++) {
+	    var img = imgs[i];
+	    if (img.height > maxht || img.width > maxwt) {
+	      // Use Ratios to constraint proportions.
+	      var old_ratio = img.height / img.width;
+	      var min_ratio = minht / minwt;
+	      // If it can scale perfectly.
+	      if (old_ratio === min_ratio) {
+	        resize_image(img, minht, minwt);
+	      } 
+	      else {
+	        var newdim = [img.height, img.width];
+	        newdim[0] = minht;  // Sort out the height first
+	        // ratio = ht / wt => wt = ht / ratio.
+	        newdim[1] = newdim[0] / old_ratio;
+	        // Do we still have to sort out the width?
+	        if (newdim[1] > maxwt) {
+	          newdim[1] = minwt;
+	          newdim[0] = newdim[1] * old_ratio;
+	        }
+	        resize_image(img, newdim[0], newdim[1]);
+	      }
+	    }
+	  }
+	}
+	resize_images(150, 150, 150, 150);
+});*/
+		
+	</script>
