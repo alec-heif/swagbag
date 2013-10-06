@@ -10,13 +10,7 @@ app.configure(function () {
     app.set('port', process.env.PORT || 8888);
     app.use(express.logger('dev'));  /* 'default', 'short', 'tiny', 'dev' */
     app.use(express.bodyParser());
-});
-
-app.get('/', function(req, res){
-  var body = 'Hello World';
-  res.setHeader('Content-Type', 'text/plain');
-  res.setHeader('Content-Length', body.length);
-  res.end(body);
+    app.use(express.static(path.join(__dirname, 'public')));
 });
 
 app.get('/freebies', freebies.findAll);

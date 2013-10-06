@@ -14,15 +14,9 @@
     <link href="css/jquery-ui.css" rel="stylesheet"/>
     <link href="css/bootstrap-theme.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
-	<!-->
-	<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="../../assets/js/html5shiv.js"></script>
-      <script src="../../assets/js/respond.min.js"></script>
-    <![endif]-->
-	
+
+
+	<!--
 	<script>
 	
 		var tbl = document.createElement("table");
@@ -70,7 +64,7 @@
 			<button onclick = "generateTable()">Create Table</button>
 			<button onclick = "addElement()">Add Element</button>
           </ul>
-        </div><!--/.nav-collapse -->
+        </div>--><!--/.nav-collapse --><!--
       </div>
     </div>
 	
@@ -101,40 +95,10 @@
           </tr>  
         </thead>   
         </tbody>  
-    </table>  
+    </table>  -->
 
-    <div class="container">
-
-      <div class="starter-template">
-        <h1>Bootstrap starter template</h1>
-        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
-        <div id="draggable" class="ui-widget-content">
-          <!--<img src="pics/generic.jpg" height="150" width="125" alt="">-->
-          <p>Drag me!</p>
-        </div>
-        <script>
-          $(function() {
-            $( ".draggable" ).draggable();
-            $( ".draggable" ).draggable({ containment: "document", opacity: 0.8, refreshPositions: true, revert: "invalid", scroll: false});
-          });
-		  
-			function updateDate(event, ui) {
-				document.getElementById("output").innerHTML=Date.now();
-			}
-			
-			$( ".draggable" ).on( "drag", updateDate );
-
-        </script>
-        <p id="output">Test</p>
-      </div>
-
-    </div><!-- /.container -->
-
-
-
-
-
-
+</head>
+<body>
 
 
 <div class="header"></div>
