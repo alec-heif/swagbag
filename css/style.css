@@ -1,11 +1,18 @@
 body {
   min-height: 2000px;
-  padding-top: 200px;
+  padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+}
+
+#draggable { 
+  width: 150px; 
+  height: 150px; 
+  padding: 0.5em; 
 }
 
 /**
 *Changes navbar height. Make these all the same and do not fuck with it. 
 **/
+
 .navbar > ul > li > a {
 	padding-top: 50px;
 	padding-bottom: 50px;
