@@ -1,7 +1,47 @@
 body {
-  min-height: 2000px;
-  padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
-}
+	min-height: 2000px;
+	padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+	
+	color: #B2B2B2;
+	
+	background:
+
+	-moz-radial-gradient( center center, contain, #757575, transparent ),
+
+	black;
+
+	background:
+
+	-webkit-radial-gradient( center center, contain, #757575, transparent ),
+
+	black;
+
+	background:
+
+	-o-radial-gradient( center center, contain, #757575, transparent ),
+
+	black;
+
+	background:
+
+	-khtml-radial-gradient( center center, contain, #757575, transparent ),
+
+	black;
+
+	background:
+
+	-ms-radial-gradient( center center, contain, #757575, transparent ),
+
+	black;
+
+	background:
+
+	radial-gradient( center center, contain, #757575, transparent ),
+
+	black;
+	}
+  
+  }
 
 #draggable { 
   width: 150px; 
