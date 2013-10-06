@@ -17,10 +17,9 @@
       <div class="nav-collapse">
         <ul class="nav navbar-nav" >
           <li class="active"><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#food_drink" class="nav-expander">Food/Drink</a></li>
+          <li><a href="#beauty" class="nav-expander">Beauty</a></li>
+          <li><a href="#health_hygiene" class="nav-expander">Health/Hygeine</a></li>
           <!-- dropdown -->
         </ul>
         <!-- /.nav -->
@@ -41,8 +40,17 @@
 </div>
 
 <script> 
-  $(document).ready("#collapser2").click(function() {
-    $(".secondnavbar").animate({
-      "marginTop":"55px"}, 500);
+  var count = 0;
+  $(document).ready(".nav-expander").click(function() {
+    if (count % 2 == 0) {
+      $(".secondnavbar").animate({
+        "marginTop":"55px"}, 500);
+      count +=1;
+    }
+    else{
+      $(".secondnavbar").animate({
+        "marginTop":"0px"}, 500);
+      count -=1;
+    }
   });
 </script>

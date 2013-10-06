@@ -14,6 +14,16 @@
     <link href="css/jquery-ui.css" rel="stylesheet"/>
     <link href="css/bootstrap-theme.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <script src="lib/underscore-min.js"></script>
+    <script src="lib/backbone-min.js"></script>
+    <script src="lib/jquery.js"></script>
+    <script src="lib/bootstrap.min.js"></script>
+    <script src="lib/jquery-ui.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/models/models.js"></script>
+    <script src="js/views/header.js"></script>
+    <script src="js/views/home.js"></script>
+    <script src="js/main.js"></script>
 
 
 	<!--
@@ -68,56 +78,139 @@
       </div>
     </div>
 	
-	<table id = "myTable" class="table">  
-        <thead>  
-          <tr>  
-            <th>
-				<div class="ui-widget-content draggable">
-				<img class="swagpic" src="pics/generic.jpg" alt="">
-				</div>
-			</th>
-			<th>
-				<div class="ui-widget-content draggable">
-				<img class="swagpic" src="pics/generic.jpg" alt="">
-				</div>
-			</th>
-			<th>
-				<div class="ui-widget-content draggable">
-				<img class="swagpic" src="pics/generic.jpg" alt="">
-				</div>
-			</th>
-			<th>
-				<div class="ui-widget-content draggable">
-				<img class="swagpic" src="pics/generic.jpg" alt="">
-				</div>
-			</th>
-        
-          </tr>  
-        </thead>   
-        </tbody>  
-    </table>  -->
 
+-->
 </head>
 <body>
 
+<div class="everything">
+<div class="header">
+<div class="navbar navbar-fixed-top navbar-inverse" id="collapsing_navbar">
+  <div class="container">
+    <div class="navbar-header">
+      <div class="nav-collapse">
+        <ul class="nav navbar-nav" >
+          <li class="active"><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
 
-<div class="header"></div>
+<div class="navbar navbar-default navbar-fixed-top secondnavbar">
+  <div class="container">
+    <div class="navbar-header">
+      <div class="nav-collapse">
+        <ul class="nav navbar-nav" >
+          <li><a href="#home">Home</a></li>
+          <li><a href="#food" class="nav-expander">Food/Drink</a></li>
+          <li><a href="#beauty" class="nav-expander">Beauty</a></li>
+          <li><a href="#health" class="nav-expander">Health/Hygeine</a></li>
+          <!-- dropdown -->
+        </ul>
+        <!-- /.nav -->
+      </div>
+      <!--/.nav-collapse -->
+    </div>
+    <!-- /.container -->
+  </div>
+  <!-- /.navbar-inner -->
+</div>
+<!-- /.navbar -->
 
-<div class="container">
+<script> 
+  var count = 0;
+
+  $(document).ready(function() {
+    $(".nav-expander").click(function(event) {
+      if (count % 2 == 0) {
+        $(".secondnavbar").animate({
+          "marginTop":"55px"}, 500);
+        $(".everything").animate({
+          "marginTop":"55px"}, 500);
+        count +=1;
+      }
+      else{
+        $(".secondnavbar").animate({
+          "marginTop":"0px"}, 500);
+        $(".everything").animate({
+          "marginTop":"0px"}, 500);
+        count -=1;
+      }
+    });
+  });
+
+  $(document).ready(function() {
+      $(".twentyMore").click(function(event) {
+        addElements();
+    });
+  });
+
+  function addElement(){
+    var table = document.getElementById("myTable");
+    var lastRow = table.rows[table.rows.length - 1];
+    if(lastRow.cells.length == 4){
+      lastRow = table.insertRow(-1);
+    }
+    var cell = lastRow.insertCell(-1);
+    var image = '<img class="swagpic" src="generic.png" alt="">'
+    var draggable = '<div class="ui-widget-content draggable">' + image +  '</div>'
+    cell.innerHTML = draggable
+    $(function() {
+      $( ".draggable" ).draggable();
+      $( ".draggable" ).draggable({ containment: "document", opacity: 0.8, refreshPositions: true, revert: "invalid", scroll: false});
+    });
+  }
+
+function addElements() {
+  for(var i = 0; i < 20; i++) {
+    addElement();
+  }
+}
+
+
+</script>
+
+<div id="listItems">
+<table border = "0" id = "myTable" class="table">  
+  <thead>  
+    <tr>  
+      <!--<th>
+        <div class="ui-widget-content draggable">
+        <img class="swagpic" src="pics/generic.jpg" alt="">
+        </div>
+      </th>
+      <th>
+        <div class="ui-widget-content draggable">
+        <img class="swagpic" src="pics/generic.jpg" alt="">
+        </div>
+      </th>
+      <th>
+        <div class="ui-widget-content draggable">
+        <img class="swagpic" src="pics/generic.jpg" alt="">
+        </div>
+      </th>
+      <th>
+        <div class="ui-widget-content draggable">
+        <img class="swagpic" src="pics/generic.jpg" alt="">
+        </div>
+      </th> -->
+    </tr>  
+  </thead>  
+  <tbody> 
+  </tbody>  
+</table> 
+</div>
+
+<div class="container" align="center">
 
     <div class="row-fluid">
         <div id="content" class="span12>"></div>
     </div>
 
     <footer class="footer">
-        <p class="pull-right"><a href="#">Back Home</a></p>
-        <p>Built as a sample application with <a href="http://documentcloud.github.com/backbone/">Backbone.js</a>,
-        <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>,
-        <a href="http://nodejs.org/">Node.js</a>,
-        <a href="http://expressjs.com/">Express</a>,
-        and <a href="http://www.mongodb.org/">MongoDB</a> by
-        <a href="http://coenraets.org" target="_blank">Christophe Coenraets</a>.<br/>
-        The source code for this application is available in <a href="#">this repository</a> on GitHub.</p>
+        <button class="twentyMore" align="center">More Elements</button>
     </footer>
 
 </div>
@@ -126,16 +219,7 @@
 <!-- Le javascript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="lib/underscore-min.js"></script>
-<script src="lib/backbone-min.js"></script>
-<script src="lib/jquery.js"></script>
-<script src="lib/bootstrap.min.js"></script>
-<script src="lib/jquery-ui.js"></script>
-<script src="js/utils.js"></script>
-<script src="js/models/models.js"></script>
-<script src="js/views/header.js"></script>
-<script src="js/views/home.js"></script>
-<script src="js/main.js"></script>
+
 
 </body>
 </html>
