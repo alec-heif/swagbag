@@ -22,10 +22,16 @@ db.open(function(err, db) {
 // req.params can only contain specific IDs assigned by MongoDB for update and delete. 
 // req.body will always be the parameters for search, add, and update.
 exports.findAll = function(req, res) {
+    var size = 20;
     console.log('Retrieving all freebies');
     db.collection('freebies', function(err, collection) {
         collection.find().toArray(function(err, items) {
-            res.send(items);
+            if (req.query.hasOwnProperty('page')) {
+                var start = parseInt(req.query.page) * size;
+                res.send(items.slice(start, start + size));
+            } else {
+                res.send(items);
+            }
         });
     });
 };
