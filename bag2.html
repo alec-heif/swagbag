@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../assets/ico/favicon.png">
+	
+
+    <title>BAGS</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="../../assets/js/html5shiv.js"></script>
+      <script src="../../assets/js/respond.min.js"></script>
+    <![endif]-->
+	
+  </head>
+  <script src="lib/jquery.js"></script>
+  <script>
+	
+	//var json = '{"foods":[{"urls": {"link": "http://pantry.twiningsusa.com/", "img": "http://www.mysavings.com/img/link/large/23457.jpg"},"item": { "category": "Food", "type": "tea"}, "name": "Twinings Tea","brand": "Twinings"},{"urls": {"link": "http://www.isatoritech.com/freeeatsmartbar/default.aspx","img": "http://www.mysavings.com/img/link/large/26726.jpg"},"item": {"category": "Food","type": "protein bar" },"name": "iSatori Protein Bar", "brand": "iSatori", "restrictions": "Printable GNC coupon."}]}'
+	var json = '[   {"_id": "5250faed5705313ae1e977d2",     "item": {       "category": "Food and Drink",       "type": "tea"     },     "name": "Samples of Twinings Tea",     "urls": {       "link": "http://pantry.twiningsusa.com/?utm_source=GoodHousekeeping&amp;utm_medium=Ad&amp;utm_campaign=Pantry2013",       "img": "http://hunt4freebies.com/wp-content/uploads/2012/09/Twinings.png"     }   },   {     "_id": "5250faed5705313ae1e977d3",     "item": {       "category": "Beauty",       "type": "skincare"     },     "name": "Sample of Simple Facial Skincare",     "urls": {       "link": "http://samples.target.com/",       "img": "http://hunt4freebies.com/wp-content/uploads/2013/09/Simple-Facial-Skincare.png"     }   },   {     "_id": "5250faed5705313ae1e977d4",     "item": {       "category": "Food and Drink",       "type": "sweetener"     },     "name": "Sample of Truvia Natural Sweetener",     "urls": {       "link": "http://truvia.com/products/eclubpromotions",       "img": "http://hunt4freebies.com/wp-content/uploads/2013/05/Truvia-Natural-Sweetener.png"     }   },   {     "_id": "5250faed5705313ae1e977d5",     "item": {       "category": "Food and Drink",       "type": "sweetener"     },     "name": "Splenda Nectresse No Calorie Sweetener Sample Pack",     "urls": {       "link": "http://partners.mysavings.com/z/23861/CD105/",       "img": "http://hunt4freebies.com/wp-content/uploads/2012/06/Nectresse.png"     }   },   {     "_id": "5250faed5705313ae1e977d6",     "item": {       "category": "Food and Drink",       "type": "beverage"     },     "name": "4-Pack of Dream Water",     "urls": {       "link": "http://ctitbytrk.com/?a=262&amp;oc=871&amp;c=7902&amp;s1=",       "img": "http://hunt4freebies.com/wp-content/uploads/2013/07/Dream-Water.png"     }   },   {     "_id": "5250faed5705313ae1e977d7",     "item": {       "category": "Food and Drink",       "type": "snacks"     },     "name": "Fit Crunch Bar Sample!",     "urls": {       "link": "http://www.fitcrunchbars.com/freebar/",       "img": "http://hunt4freebies.com/wp-content/uploads/2013/08/fit-crunch-bars.png"     }   },   {     "_id": "5250faee5705313ae1e977d8",     "item": {       "category": "Beauty",       "type": "fragrance"     },     "name": "Bvlgari Omnia Crystalline Fragrance Sample",     "urls": {       "link": "http://bvlgariomnia.bulgari.com/en/try-the-fragrance",       "img": "http://hunt4freebies.com/wp-content/uploads/2013/09/BVLGARI-Omnia.png"     }   },   {     "_id": "5250faee5705313ae1e977d9",     "item": {       "category": "Beauty",       "type": "skincare"     },     "name": "Sample of Divine Cream At L’Occitane Stores",     "urls": {       "link": "http://usa.loccitane.com/divine-minisite,82,1,47238,451524.htm/?utm_source=Facebook&amp;utm_medium=Facebook&amp;utm_campaign=Facebook",       "img": "http://hunt4freebies.com/wp-content/uploads/2013/09/Divine-Cream.png"     }   },   {     "_id": "5250faee5705313ae1e977da",     "item": {       "category": "Beauty",       "type": "fragrance"     },     "name": "Sample of Burberry Brit Rhythm Fragrance For Men",     "urls": {       "link": "http://us.burberry.com/store/beauty-fragrance/brit-rhythm/",       "img": "http://hunt4freebies.com/wp-content/uploads/2013/09/Burberry-Brit-Rhythm-Fragrance.png"     }   },   {     "_id": "5250faee5705313ae1e977db",     "item": {       "category": "Beauty",       "type": "fragrance"     },     "name": "Gucci Guilty Black Fragrance Sample",     "urls": {       "link": "https://www.facebook.com/GUCCI/app_320093318106545",       "img": "http://hunt4freebies.com/wp-content/uploads/2013/03/Gucci-Guilty-Black-Fragrance.png"     }   },   {     "_id": "5250faee5705313ae1e977dc",     "item": {       "category": "Beauty",       "type": "fragrance"     },     "name": "Sample of Katy Perry Killer Queen Fragrance",     "urls": {       "link": "https://www.facebook.com/KatyPerryFragrances/app_522369464495125",       "img": "http://hunt4freebies.com/wp-content/uploads/2013/08/Katy-Perry-Killer-Queen-Fragrance.png"     }   },   {     "_id": "5250faee5705313ae1e977dd",     "item": {       "category": "Beauty",       "type": "skincare"     },     "name": "Estee Lauder Advanced Night Repair Serum Sample",     "urls": {       "link": "http://www.thebeautyofnight.com/_efb/beautyofnight/#/overlay/intro",       "img": "http://hunt4freebies.com/wp-content/uploads/2013/08/Estee-Lauder-Advanced-Night-Repair-Serum.png"     }   },   {     "_id": "5250faee5705313ae1e977de",     "item": {       "category": "Beauty",       "type": "fragrance"     },     "name": "1.5ml Peony &amp; Blush Suede Fragrance Sample",     "urls": {       "link": "http://www.jomalone.com/_efb/Peony?s=b",       "img": "http://hunt4freebies.com/wp-content/uploads/2013/08/Peony-Blush-Suede-Fragrance.png"     }   },   {     "_id": "5250faee5705313ae1e977df",     "item": {       "category": "Beauty",       "type": "fragrance"     },     "name": "Escada Cherry In The Air Fragrance Sample",     "urls": {       "link": "https://esc.cocomore.com/zesnc/esampling/fragrance_escada_ff13_cherry_gl_spl1301/registration/register/en_GB",       "img": "http://hunt4freebies.com/wp-content/uploads/2013/03/Escada-Cherry-In-The-Air-Fragrance.png"     }   },   {     "_id": "5250faef5705313ae1e977e0",     "item": {       "category": "Beauty",       "type": "haircare"     },     "name": "Sample of L’Oreal Color Vibrancy with Antioxidants",     "urls": {       "link": "http://www.lorealparisusa.com/en/offers/samples/advanced-haircare/register.aspx?hair-concern=color&amp;smredirecturl=/en/Brands/Hair-Care-Styling/Advanced-Haircare/Color-Vibrancy.aspx",       "img": "http://hunt4freebies.com/wp-content/uploads/2013/07/LOreal-Color-Vibrancy.png"     }   },   {     "_id": "5250faef5705313ae1e977e1",     "item": {       "category": "Beauty",       "type": "haircare"     },     "name": "Sample of Garnier Fructis Triple Nutrition",     "urls": {       "link": "http://www.garnierusa.com/_en/_us/fructis_triple_nutrition/",       "img": "http://hunt4freebies.com/wp-content/uploads/2013/08/Garnier-Fructis-Triple-Nutrition-Shampoo-and-Conditioner.png"     }   },   {     "_id": "5250faef5705313ae1e977e2",     "item": {       "category": "Health and Hygiene"     },     "name": "Sample Pack of Hangover Salvation",     "urls": {       "link": "https://www.facebook.com/hangoversalvation/app_101393123286933",       "img": "http://hunt4freebies.com/wp-content/uploads/2013/09/Hangover-Salvation.png"     }   },   {     "_id": "5250faef5705313ae1e977e3",     "item": {       "category": "Health and Hygiene",       "type": "for her"     },     "name": "First Response Early Pregnancy Test, Fertility Test And Digital Ovulation Test Kit",     "urls": {      "link": "http://www.fertilehope.org/firstresponse.cfm",      "img": "http://hunt4freebies.com/wp-content/uploads/2013/10/First-Response.png"    }  },  {    "_id": "5250faef5705313ae1e977e4",    "item": {      "category": "Health and Hygiene",      "type": "toiletries"    },    "name": "Sample of Sensodyne Extra Whitening Toothpaste for Costco Members",    "urls": {      "link": "http://www.costco.com/FREE-Sample-Sensodyne/5C2/5AE-Extra-Whitening-Toothpaste/52c-0.8-oz..product.100040817.html",      "img": "http://hunt4freebies.com/wp-content/uploads/2013/09/Sensodyne-Extra-Whitening-Toothpaste.png"}}]'
+
+	var obj = $.parseJSON(json)
+
+	function addObject(){
+	
+			var table = document.getElementById("myTable");
+			
+			for(var j = 0; j < 3; j++){
+			var newRow = table.insertRow(-1);
+			for(var i = 0; i < 2; i++){
+			object = obj[(j*2 + i)];
+			var imgCell = newRow.insertCell(-1);
+			var informationCell = newRow.insertCell(-1); 
+			var img = document.createElement("img");
+			img.setAttribute("class", "thumbnail");
+			img.setAttribute("id", "image" + (i+j*2).toString());
+			img.setAttribute("width", "300px");
+			img.setAttribute("height", "300px");
+			$("#image" + (i+j*2).toString()).wrap("<a href=" + object.urls.link + "></a>");
+			img.src = object.urls.img;
+			imgCell.appendChild(img);	
+			informationCell.innerHTML = "Name: " + object.name + "<br/> Type: " +  object.item.type + "<br/> Category: " + object.item.category
+			informationCell.setAttribute("id","imageinfo" + (i+j*2).toString() );
+			$("#imageinfo" + (i+j*2).toString()).css("font-size", "30px");
+			$("#imageinfo" + (i+j*2).toString()).css("", "30px");
+			$("#imageinfo" + (i+j*2).toString()).css("font-size", "30px");
+			$("#imageinfo" + (i+j*2).toString()).css("font-size", "30px");
+			}
+			}
+
+			
+	}
+	</script>
+	
+	<body>
+	
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" onClick = addObject(); href="#">Bags</a>
+        </div>
+        <div class="collapse navbar-collapse">
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+    <div class="container">
+		
+		<div class="starter-template">
+        <h1>Snacks and Cosmetics</h1>
+      </div>
+
+    </div><!-- /.container -->
+	
+	<table id = "myTable" class = "table">
+	</table>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>

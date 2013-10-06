@@ -1,4 +1,3 @@
-
 var express = require('express');
 var path = require('path');
 var http = require('http');
@@ -31,5 +30,3 @@ app.delete('/bags/:name', swag.deleteBag);
 
 app.listen(app.get('port'));
 console.log("Server running on port 8888!!");
-
-
