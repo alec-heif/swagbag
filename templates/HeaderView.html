@@ -32,3 +32,17 @@
   <!-- /.navbar-inner -->
 </div>
 <!-- /.navbar -->
+
+<p>TestTestTest</p>
+<div class="collapser_button">
+  <button type="button" id="collapser2" class="btn btn-danger"> <!-- data-toggle="collapse" data-target="#top_navbar" onclick='$(".collapse").collapse()'>-->
+    simple collapsible
+  </button>
+</div>
+
+<script> 
+  $(document).ready("#collapser2").click(function() {
+    $(".secondnavbar").animate({
+      "marginTop":"55px"}, 500);
+  });
+</script>
