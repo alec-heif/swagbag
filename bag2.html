@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../assets/ico/favicon.png">
+
+    <title>BAGS</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="dist/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="starter-template.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="../../assets/js/html5shiv.js"></script>
+      <script src="../../assets/js/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  
+  <script>
+	var json = '{"foods":[{"urls": {"link": "http://pantry.twiningsusa.com/", "img": "http://www.mysavings.com/img/link/large/23457.jpg"},"item": { "category": "Food", "type": "tea"}, "name": "Twinings Tea","brand": "Twinings"},{"urls": {"link": "http://www.isatoritech.com/freeeatsmartbar/default.aspx","img": "http://www.mysavings.com/img/link/large/26726.jpg"},"item": {"category": "Food","type": "protein bar" },"name": "iSatori Protein Bar", "brand": "iSatori", "restrictions": "Printable GNC coupon."}]}'
+	var obj = $.parseJSON(json)
+	alert(obj.foods[0].item.type);
+	object = obj.foods[0];
+	function addObject(){
+		var table = document.getElementById("myTable");
+		var newRow = table.insertRow(-1);
+		var imgCell = newRow.insertCell(-1);
+		var informationCell = newRow.insertCell(-1); 
+		var img = document.createElement("img");
+		img.src = object.urls.img;
+		imgCell.appendChild(img);	
+		
+		informationCell.innerHTML = "Name: " + object.name + "<br/>" +
+									"Link: " + object.urls.link + "<br/>" +
+									"Category: " + object.item.category + "<br/>" +
+									"Type: " + object.item.type + "<br/>" + 
+									"Brand: " + object.brand + "<br/>"
+		
+	}
+	</script>
+	
+	<body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Project name</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="starter-template">
+        <h1>Bootstrap starter template</h1>
+        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+      </div>
+
+    </div><!-- /.container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../assets/js/jquery.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+  </body>
+</html>
