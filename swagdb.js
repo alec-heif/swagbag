@@ -1,5 +1,4 @@
 var mongo = require('mongodb');
-var extend = require('util')._extend;
 
 var server = new mongo.Server('localhost', 27017, {auto_reconnect: true});
 var db = new mongo.Db('swagdb', server, {safe: true});
@@ -34,25 +33,27 @@ exports.findFreebiesByBag = function(req, res) {
     var name = req.params.name;
     db.collection('demo', function(err, collection) {
         collection.findOne({'name': name}, {'bag': 1, '_id': 0}, function(err, doc) {
-            res.send(doc['bag']);
+            if (doc !== null) {
+                res.send(doc['bag']);
+            } else {
+                res.send({'error': 'No bag with that name found'});
+            }
         });
     });    
 };
 
-
 exports.upsertBag = function(req, res) {
     var name = req.params.name;
-    var doc = req.body;
+    var bag = req.body;
     console.log('Upserting bag: ' + name);
     console.log(JSON.stringify(bag));
     db.collection('demo', function(err, collection) {
-        collection.update({'name': name}, doc, {upsert: true, safe: true}, function(err, result) {
+        collection.update({'name': name}, bag, {upsert: true, safe: true}, function(err, result) {
             if (err) {
                 console.log('Error upserting freebie: ' + err);
                 res.send({'error':'An error has occurred'});
             } else {
-                console.log('' + result + ' document(s) upserted');
-                res.send(doc);
+                res.send(bag);
             }
         });
     });
@@ -67,7 +68,7 @@ exports.deleteBag = function(req, res) {
                 res.send({'error':'An error has occurred - ' + err});
             } else {
                 console.log('' + result + ' document(s) deleted');
-                res.send(req.body);
+                res.send({'success': name});
             }
         });
     });

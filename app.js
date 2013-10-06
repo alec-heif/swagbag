@@ -21,8 +21,8 @@ app.get('/', function(req, res){
 });
 
 app.get('/freebies', freebies.findAll);
-app.get('/search/', freebies.search)
-app.post('/freebieDataMiner', freebies.addFreebie);
+app.get('/search', freebies.search)
+app.post('/freebieDataMiner', freebies.upsertFreebie);
 app.get('/bags', swag.findAllNames);
 app.get('/bags/:name', swag.findFreebiesByBag); 
 app.post('/bags/:name', swag.upsertBag);
@@ -31,12 +31,5 @@ app.delete('/bags/:name', swag.deleteBag);
 
 app.listen(app.get('port'));
 console.log("Server running on port 8888!!");
-
-// var http = require('http');
-// http.createServer(function (req, res) {
-//   res.writeHead(200, {'Content-Type': 'text/plain'});
-//   res.end('Hello Node.js\n');
-// }).listen(8888);
-// console.log("Server running!!");
 
 

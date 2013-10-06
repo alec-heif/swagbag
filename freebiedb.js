@@ -31,9 +31,39 @@ exports.findAll = function(req, res) {
 };
 
 exports.search = function(req, res) {
-    var params = req.body; // {} by default
+    var urlParams = req.query; 
+    var mongoParams; // Ugh is there a way to make this less messy? I hate javascript >_<
+    if (urlParams.hasOwnProperty('category') && urlParams.hasOwnProperty('type')) {
+        orParams = new Array();
+        if (urlParams.category instanceof Array) {
+            orParams[0] = { 'item.category': { $in: urlParams.category }};
+        } else {
+           orParams[0] = { 'item.category': urlParams.category };
+        }
+        if (urlParams.type instanceof Array) {
+            orParams[1] = { 'item.type': { $in: urlParams.type }};
+        } else {
+            orParams[1] = { 'item.type': urlParams.type };
+        }
+        mongoParams = { $or: orParams };
+    } else if (urlParams.hasOwnProperty('category')) {
+        if (urlParams.category instanceof Array) {
+            mongoParams = { 'item.category': { $in: urlParams.category }};
+        } else {
+            mongoParams = { 'item.category': urlParams.category };
+        }    
+    } else if (urlParams.hasOwnProperty('type')) {
+        if (urlParams.type instanceof Array) {
+            mongoParams = { 'item.type': { $in: urlParams.type }};
+        } else {
+            mongoParams = { 'item.type': urlParams.type };
+        }
+    } else {
+        res.send({'error': 'No search parameters detected. Is it empty or malformed?'});
+        return;
+    }
     db.collection('freebies', function(err, collection) {
-        collection.find(params).toArray(function(err, items) {
+        collection.find(mongoParams).toArray(function(err, items) {
             res.send(items);
         });
     });
@@ -54,21 +84,19 @@ exports.addFreebie = function(req, res) {
     });
 }
 
-exports.updateFreebie = function(req, res) {
-    var id = req.params.id;
-    var updates = req.body; // e.g. { category: 'Food' }
-    console.log('Updating freebie: ' + id);
-    console.log(JSON.stringify(updates));
+exports.upsertFreebie = function(req, res) {
+    var freebie = req.body;
+    console.log('Upserting freebie');
+    console.log(JSON.stringify(freebie));
     db.collection('freebies', function(err, collection) {
-        collection.update({'_id': new mongo.BSONPure.ObjectID(id)}, {$set: updates}, 
-            {safe: true}, function(err, result) {
+        collection.update({'urls.link': freebie['urls']['link']}, freebie, 
+            {upsert: true, safe: true}, function(err, result) {
                 if (err) {
-                    console.log('Error updating freebie: ' + err);
+                    console.log('Error upserting freebie: ' + err);
                     res.send({'error':'An error has occurred'});
                 } else {
-                    console.log('' + result + ' document(s) updated');
-                    res.send(updates);
-            }
+                    res.send(freebie);
+                }
         });
     });
 }
