@@ -16,24 +16,48 @@
 
     <!-- Custom styles for this template -->
     <link href="starter-template.css" rel="stylesheet">
+	
+	<link rel="stylesheet" href="/resources/demos/style.css" />
 
     <!-- JQuery CSS -->
-    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
-
-    <link rel="stylesheet" href="/resources/demos/style.css" />
-
-    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
-    <style>
-    #draggable { width: 150px; height: 150px; padding: 0.5em; }
-    </style>
-
-
+    <!-- link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+    <script src="dist/js/jquery-1.9.1.js></script>
+    <script src="dist/jquery-ui.js"></script>
+	
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="../../assets/js/html5shiv.js"></script>
       <script src="../../assets/js/respond.min.js"></script>
     <![endif]-->
+	
+	<script>
+		function Hello(){
+			alert("Hello!");
+		}
+			
+		function generateTable(){
+			var body = document.getElementsByTagName("body")[0];
+			var tbl = document.createElement("table");
+			var tblBody = document.createElement("tbody");
+			
+			for(var j = 0; j < 2; j ++){
+				var row = document.createElement("tr");
+				
+				for (var i = 0; i < 2; i ++){
+					var cell = document.createElement("td");
+					var cellText = document.createTextNode("cell is row " + j + ", column " + i);
+					cell.appendChild(cellText);
+					row.appendChild(cell);
+				}
+				
+				tblBody.appendChild(row);
+			}
+			
+			tbl.appendChild(tblBody);
+			body.appendChild(tbl);
+			tbl.setAttribute("border", "2");
+		}
+	</script>
   </head>
 
   <body>
@@ -53,10 +77,40 @@
             <li class="active"><a href="#">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#contact">Contact</a></li>
+			<button onclick = "generateTable()">Create Table</button>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
     </div>
+	
+	<table class="table">  
+        <thead>  
+          <tr>  
+            <th>
+				<div class="ui-widget-content draggable">
+				<img class="swagpic" src="pics/generic.jpg" alt="">
+				</div>
+			</th>
+			<th>
+				<div class="ui-widget-content draggable">
+				<img class="swagpic" src="pics/generic.jpg" alt="">
+				</div>
+			</th>
+			<th>
+				<div class="ui-widget-content draggable">
+				<img class="swagpic" src="pics/generic.jpg" alt="">
+				</div>
+			</th>
+			<th>
+				<div class="ui-widget-content draggable">
+				<img class="swagpic" src="pics/generic.jpg" alt="">
+				</div>
+			</th>
+        
+          </tr>  
+        </thead>   
+        </tbody>  
+    </table>  
 
     <div class="container">
 
@@ -69,13 +123,32 @@
         </div>
         <script>
           $(function() {
-            $( "#draggable" ).draggable();
-            $( "#draggable" ).draggable({ containment: "document", opacity: 0.8, refreshPositions: true, revert: "invalid", scroll: false});
+            $( ".draggable" ).draggable();
+            $( ".draggable" ).draggable({ containment: "document", opacity: 0.8, refreshPositions: true, revert: "invalid", scroll: false});
           });
-          function updateDate(event, ui) {
-            document.getElementById("output").innerHTML=Date.now();
-          }
-          $( "#draggable" ).on( "drag", updateDate );
+		  
+			function tableCreate(){
+				var body = document.body,
+					tbl = document.createElement('table');
+				for(var i = 0; i < 3; i ++){
+					var tr = tbl.insertRow();
+					for(var j = 0; j < 2; j++){
+						if(i == 2 && j == 1){
+							break
+						} else {
+							var td = tr.insertCell();
+							td.appendChild("HELLO");
+						}
+					}
+				}
+				body.appendchild(tbl);
+			}
+		  
+			function updateDate(event, ui) {
+				document.getElementById("output").innerHTML=Date.now();
+			}
+			
+			$( ".draggable" ).on( "drag", updateDate );
 
         </script>
         <p id="output">Test</p>
