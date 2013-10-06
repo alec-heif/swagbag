@@ -1,0 +1,14 @@
+{
+    "name": "Swag Bag",
+    "description": "Free shit. No strings attached. Mailed to your front door.",
+    "version": "0.0.1",
+    "private": true,
+    "dependencies": {
+        "express": "3.x",
+        "mongodb": "1.1.8",
+    },
+    "engines": {
+        "node": "0.8.4",
+        "npm": "1.1.49"
+    }
+}

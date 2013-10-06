@@ -1,0 +1,48 @@
+<div class="navbar navbar-fixed-top navbar-inverse" id="collapsing_navbar">
+  <div class="container">
+    <div class="navbar-header">
+      <div class="nav-collapse">
+        <ul class="nav navbar-nav" >
+          <li class="active"><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="navbar navbar-default navbar-fixed-top secondnavbar">
+  <div class="container">
+    <div class="navbar-header">
+      <div class="nav-collapse">
+        <ul class="nav navbar-nav" >
+          <li class="active"><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <!-- dropdown -->
+        </ul>
+        <!-- /.nav -->
+      </div>
+      <!--/.nav-collapse -->
+    </div>
+    <!-- /.container -->
+  </div>
+  <!-- /.navbar-inner -->
+</div>
+<!-- /.navbar -->
+
+<p>TestTestTest</p>
+<div class="collapser_button">
+  <button type="button" id="collapser2" class="btn btn-danger"> <!-- data-toggle="collapse" data-target="#top_navbar" onclick='$(".collapse").collapse()'>-->
+    simple collapsible
+  </button>
+</div>
+
+<script> 
+  $(document).ready("#collapser2").click(function() {
+    $(".secondnavbar").animate({
+      "marginTop":"55px"}, 500);
+  });
+</script>
