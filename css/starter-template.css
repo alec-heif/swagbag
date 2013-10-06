@@ -1,7 +1,30 @@
 body {
-  padding-top: 50px;
+  padding-top: 100px;
 }
 .starter-template {
-  padding: 40px 15px;
   text-align: center;
+}
+
+th{
+	text-align: center;
+}
+
+td{
+	text-align: center;
+}
+
+
+.swagpic {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+	height: 290px;
+	width: 290x:
+}
+
+
+.draggable {
+	width: 300px;
+	height: 300px; 
+	margin: auto;
 }
