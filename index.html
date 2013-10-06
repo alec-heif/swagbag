@@ -20,9 +20,10 @@
 	<link rel="stylesheet" href="/resources/demos/style.css" />
 
     <!-- JQuery CSS -->
-    <!-- link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
-    <script src="dist/js/jquery-1.9.1.js></script>
-    <script src="dist/jquery-ui.js"></script>
+    <link rel="stylesheet" href="dist/css/jquery-ui.css" />
+
+    <script src="dist/js/jquery-1.9.1.js"></script>
+    <script src="dist/js/jquery-ui.js"></script>
 	
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -31,11 +32,15 @@
     <![endif]-->
 	
 	<script>
+	
+		var tbl = document.createElement("table");
+		
 		function Hello(){
 			alert("Hello!");
 		}
-			
-		function generateTable(){
+		
+		/*
+		function generateTable(rows){
 			var body = document.getElementsByTagName("body")[0];
 			var tbl = document.createElement("table");
 			var tblBody = document.createElement("tbody");
@@ -44,8 +49,8 @@
 				var row = document.createElement("tr");
 				
 				for (var i = 0; i < 2; i ++){
-					var cell = document.createElement("td");
-					var cellText = document.createTextNode("cell is row " + j + ", column " + i);
+					var cell = document.createElement("th");
+					var cellText = document.createElement(");
 					cell.appendChild(cellText);
 					row.appendChild(cell);
 				}
@@ -57,11 +62,25 @@
 			body.appendChild(tbl);
 			tbl.setAttribute("border", "2");
 		}
+		*/
+		
+		function addElement(){
+			var table = document.getElementById("myTable");
+			var lastRow = table.rows[table.rows.length - 1];
+			if(lastRow.cells.length == 4){
+				lastRow = table.insertRow(-1);
+			}
+			var cell = lastRow.insertCell(-1);
+			var image = '<img class="swagpic" src="pics/generic.jpg" alt="">'
+			var draggable = "<div class = 'draggable'>" + image +  "</div>"
+			cell.innerHTML = draggable
+		}
+		
 	</script>
   </head>
 
   <body>
-
+	
     <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
@@ -78,12 +97,13 @@
             <li><a href="#about">About</a></li>
             <li><a href="#contact">Contact</a></li>
 			<button onclick = "generateTable()">Create Table</button>
+			<button onclick = "addElement()">Add Element</button>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
     </div>
 	
-	<table class="table">  
+	<table id = "myTable" class="table">  
         <thead>  
           <tr>  
             <th>
@@ -117,32 +137,11 @@
       <div class="starter-template">
         <h1>Bootstrap starter template</h1>
         <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
-        <div id="draggable" class="ui-widget-content">
-          <!--<img src="pics/generic.jpg" height="150" width="125" alt="">-->
-          <p>Drag me!</p>
-        </div>
         <script>
           $(function() {
             $( ".draggable" ).draggable();
             $( ".draggable" ).draggable({ containment: "document", opacity: 0.8, refreshPositions: true, revert: "invalid", scroll: false});
           });
-		  
-			function tableCreate(){
-				var body = document.body,
-					tbl = document.createElement('table');
-				for(var i = 0; i < 3; i ++){
-					var tr = tbl.insertRow();
-					for(var j = 0; j < 2; j++){
-						if(i == 2 && j == 1){
-							break
-						} else {
-							var td = tr.insertCell();
-							td.appendChild("HELLO");
-						}
-					}
-				}
-				body.appendchild(tbl);
-			}
 		  
 			function updateDate(event, ui) {
 				document.getElementById("output").innerHTML=Date.now();
