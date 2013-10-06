@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<link rel="shortcut icon" href="../../assets/ico/favicon.png">
+
+		<title>Starter Template for Bootstrap</title>
+
+		<!-- Bootstrap core CSS -->
+		<link href="dist/css/bootstrap.css" rel="stylesheet">
+
+		<!-- Custom styles for this template -->
+		<link href="starter-template.css" rel="stylesheet">
+
+		<link rel="stylesheet" href="/resources/demos/style.css" />
+
+		<!-- JQuery CSS -->
+		<link rel="stylesheet" href="dist/css/jquery-ui.css" />
+		<style>
+		</style>
+	</head>
+
+	<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+	<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+
+	<script>
+		var json = '{"foods":[{"urls": {"link": "http://pantry.twiningsusa.com/", "img": "http://www.mysavings.com/img/link/large/23457.jpg"},"item": { "category": "Food", "type": "tea"}, "name": "Twinings Tea","brand": "Twinings"},{"urls": {"link": "http://www.isatoritech.com/freeeatsmartbar/default.aspx","img": "http://www.mysavings.com/img/link/large/26726.jpg"},"item": {"category": "Food","type": "protein bar" },"name": "iSatori Protein Bar", "brand": "iSatori", "restrictions": "Printable GNC coupon."}]}'
+		var obj = $.parseJSON(json)
+		alert(obj.foods[0].item.type);
+		object = obj.foods[0];
+		function addObject(){
+			var table = document.getElementById("myTable");
+			var newRow = table.insertRow(-1);
+			var imgCell = newRow.insertCell(-1);
+			var informationCell = newRow.insertCell(-1); 
+			var img = document.createElement("img");
+			img.src = object.urls.img;
+			imgCell.appendChild(img);	
+			
+			informationCell.innerHTML = "Name: " + object.name + "<br/>" +
+										"Link: " + object.urls.link + "<br/>" +
+										"Category: " + object.item.category + "<br/>" +
+										"Type: " + object.item.type + "<br/>" + 
+										"Brand: " + object.brand + "<br/>"
+			
+		}
+		
+	</script>
+
+	<body>
+		
+		<button onclick = "addObject()">Add Element</button>
+		<table id = "myTable" class="table">
+		</table>
+	</body>
+</html>
