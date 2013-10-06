@@ -33,6 +33,18 @@ table, tr, cell {
   padding: 0.5em; 
 }
 
+table {
+    border:1px solid #CCC;
+    border-collapse:collapse;
+}
+td {
+    border:none;
+}
+
+#our_title {
+  position:absolute;
+  left:20px;
+}
 /**
 *Changes navbar height. Make these all the same and do not fuck with it. 
 **/

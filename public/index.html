@@ -90,7 +90,6 @@
     <div class="navbar-header">
       <div class="nav-collapse">
         <ul class="nav navbar-nav" >
-          <li><font color=white size=8>SwagBag    </font></li>
           <li><a href="#type=tea">    Protein Bars</a></li>
           <li><a href="#type=tea">Snacks</a></li>
           <li><a href="#type=tea">Tea</a></li>
@@ -106,10 +105,10 @@
     <div class="navbar-header">
       <div class="nav-collapse">
         <ul class="nav navbar-nav" >
-          <li><a href="#home">Home</a></li>
-          <li><a href="#food" class="nav-expander">Food and Drink</a></li>
-          <li><a href="#beauty" class="nav-expander">Beauty</a></li>
-          <li><a href="#health" class="nav-expander">Health and Hygiene</a></li>
+          <li><font size=6>SwagBag</font></li>
+          <li><a href="#food" class="food">Food/Drink</a></li>
+          <li><a href="#beauty" class="beauty">Beauty</a></li>
+          <li><a href="#health" class="health">Health/Hygeine</a></li>
           <!-- dropdown -->
         </ul>
         <!-- /.nav -->
@@ -123,55 +122,1065 @@
 <!-- /.navbar -->
 
 <script> 
-  var count = 0;
+  
 
+var json_beauty =   [{
+    "_id": "5250faed5705313ae1e977d3",
+    "item": {
+      "category": "Beauty",
+      "type": "skincare"
+    },
+    "name": "Sample of Simple Facial Skincare",
+    "urls": {
+      "link": "http://samples.target.com/",
+      "img": "http://hunt4freebies.com/wp-content/uploads/2013/09/Simple-Facial-Skincare.png"
+    }
+  },
+  {
+    "_id": "5250faee5705313ae1e977d8",
+    "item": {
+      "category": "Beauty",
+      "type": "fragrance"
+    },
+    "name": "Bvlgari Omnia Crystalline Fragrance Sample",
+    "urls": {
+      "link": "http://bvlgariomnia.bulgari.com/en/try-the-fragrance",
+      "img": "http://hunt4freebies.com/wp-content/uploads/2013/09/BVLGARI-Omnia.png"
+    }
+  },
+  {
+    "_id": "5250faee5705313ae1e977d9",
+    "item": {
+      "category": "Beauty",
+      "type": "skincare"
+    },
+    "name": "Sample of Divine Cream At L’Occitane Stores",
+    "urls": {
+      "link": "http://usa.loccitane.com/divine-minisite,82,1,47238,451524.htm/?utm_source=Facebook&amp;utm_medium=Facebook&amp;utm_campaign=Facebook",
+      "img": "http://hunt4freebies.com/wp-content/uploads/2013/09/Divine-Cream.png"
+    }
+  },
+  {
+    "_id": "5250faee5705313ae1e977da",
+    "item": {
+      "category": "Beauty",
+      "type": "fragrance"
+    },
+    "name": "Sample of Burberry Brit Rhythm Fragrance For Men",
+    "urls": {
+      "link": "http://us.burberry.com/store/beauty-fragrance/brit-rhythm/",
+      "img": "http://hunt4freebies.com/wp-content/uploads/2013/09/Burberry-Brit-Rhythm-Fragrance.png"
+    }
+  },
+  {
+    "_id": "5250faee5705313ae1e977db",
+    "item": {
+      "category": "Beauty",
+      "type": "fragrance"
+    },
+    "name": "Gucci Guilty Black Fragrance Sample",
+    "urls": {
+      "link": "https://www.facebook.com/GUCCI/app_320093318106545",
+      "img": "http://hunt4freebies.com/wp-content/uploads/2013/03/Gucci-Guilty-Black-Fragrance.png"
+    }
+  },
+  {
+    "_id": "5250faee5705313ae1e977dc",
+    "item": {
+      "category": "Beauty",
+      "type": "fragrance"
+    },
+    "name": "Sample of Katy Perry Killer Queen Fragrance",
+    "urls": {
+      "link": "https://www.facebook.com/KatyPerryFragrances/app_522369464495125",
+      "img": "http://hunt4freebies.com/wp-content/uploads/2013/08/Katy-Perry-Killer-Queen-Fragrance.png"
+    }
+  },
+  {
+    "_id": "5250faee5705313ae1e977dd",
+    "item": {
+      "category": "Beauty",
+      "type": "skincare"
+    },
+    "name": "Estee Lauder Advanced Night Repair Serum Sample",
+    "urls": {
+      "link": "http://www.thebeautyofnight.com/_efb/beautyofnight/#/overlay/intro",
+      "img": "http://hunt4freebies.com/wp-content/uploads/2013/08/Estee-Lauder-Advanced-Night-Repair-Serum.png"
+    }
+  },
+  {
+    "_id": "5250faee5705313ae1e977de",
+    "item": {
+      "category": "Beauty",
+      "type": "fragrance"
+    },
+    "name": "1.5ml Peony &amp; Blush Suede Fragrance Sample",
+    "urls": {
+      "link": "http://www.jomalone.com/_efb/Peony?s=b",
+      "img": "http://hunt4freebies.com/wp-content/uploads/2013/08/Peony-Blush-Suede-Fragrance.png"
+    }
+  },
+  {
+    "_id": "5250faee5705313ae1e977df",
+    "item": {
+      "category": "Beauty",
+      "type": "fragrance"
+    },
+    "name": "Escada Cherry In The Air Fragrance Sample",
+    "urls": {
+      "link": "https://esc.cocomore.com/zesnc/esampling/fragrance_escada_ff13_cherry_gl_spl1301/registration/register/en_GB",
+      "img": "http://hunt4freebies.com/wp-content/uploads/2013/03/Escada-Cherry-In-The-Air-Fragrance.png"
+    }
+  },
+  {
+    "_id": "5250faef5705313ae1e977e0",
+    "item": {
+      "category": "Beauty",
+      "type": "haircare"
+    },
+    "name": "Sample of L’Oreal Color Vibrancy with Antioxidants",
+    "urls": {
+      "link": "http://www.lorealparisusa.com/en/offers/samples/advanced-haircare/register.aspx?hair-concern=color&amp;smredirecturl=/en/Brands/Hair-Care-Styling/Advanced-Haircare/Color-Vibrancy.aspx",
+      "img": "http://hunt4freebies.com/wp-content/uploads/2013/07/LOreal-Color-Vibrancy.png"
+    }
+  },
+  {
+    "_id": "5250faef5705313ae1e977e1",
+    "item": {
+      "category": "Beauty",
+      "type": "haircare"
+    },
+    "name": "Sample of Garnier Fructis Triple Nutrition",
+    "urls": {
+      "link": "http://www.garnierusa.com/_en/_us/fructis_triple_nutrition/",
+      "img": "http://hunt4freebies.com/wp-content/uploads/2013/08/Garnier-Fructis-Triple-Nutrition-Shampoo-and-Conditioner.png"
+    }
+  },
+  {
+    "_id": "5250faef5705313ae1e977e7",
+    "item": {
+      "category": "Beauty",
+      "type": "haircare"
+    },
+    "name": "Clear Men Scalp Therapy Complete Care 2-in-1 Shampoo and Conditioner Sample",
+    "urls": {
+      "link": "https://www.facebook.com/clearmen?sk=app_408170549201072",
+      "img": "http://hunt4freebies.com/wp-content/uploads/2012/08/Clear-Scalp-for-Men.png"
+    }
+  },
+  {
+    "_id": "5250faf15705313ae1e977ef",
+    "item": {
+      "category": "Beauty",
+      "type": "cosmetics"
+    },
+    "name": "Lipstick Sample from Cautivadora",
+    "urls": {
+      "link": "http://woobox.com/aahpp4",
+      "img": "http://hunt4freebies.com/wp-content/uploads/2013/07/Lipstick-Sample.png"
+    }
+  },
+  {
+    "_id": "5250faf15705313ae1e977f0",
+    "item": {
+      "category": "Beauty",
+      "type": "fragrance"
+    },
+    "name": "1.2ml La Collection De Grasse Deluxe Fragrance Sample",
+    "urls": {
+      "link": "https://www.google.com/offers/savable/mc/HFD7KTLOL2D74-OCCITANE1530?gl=US",
+      "img": "http://hunt4freebies.com/wp-content/uploads/2013/06/La-Collection-De-Grasse-Deluxe-Fragrance.png"
+    }
+  },
+  {
+    "_id": "5250faf15705313ae1e977f1",
+    "item": {
+      "category": "Beauty",
+      "type": "fragrance"
+    },
+    "name": "Boss Orange Fragrance Sample",
+    "urls": {
+      "link": "http://fragrances.hugoboss.com/uk/boss_in_motion-free-sample",
+      "img": "http://hunt4freebies.com/wp-content/uploads/2013/04/Boss-Orange-Fragrance.png"
+    }
+  },
+  {
+    "_id": "5250faf25705313ae1e977f5",
+    "item": {
+      "category": "Beauty",
+      "type": "haircare"
+    },
+    "name": "Sample of Fekkai Technician Color Care &amp; Glossing Collection",
+    "urls": {
+      "link": "http://www.costco.com/FREE-Sample-Fekkai-Glossing-or-Technician-Color-Care-Collection.product.100017125.html",
+      "img": "http://hunt4freebies.com/wp-content/uploads/2012/02/Fekkai-Glossing-or-Technician-Color-Care-Collection.png"
+    }
+  },
+  {
+    "_id": "5250faf45705313ae1e977fb",
+    "item": {
+      "category": "Beauty",
+      "type": "fragrance"
+    },
+    "name": "Sample of Gucci Flora Garden Fragrance",
+    "urls": {
+      "link": "https://www.facebook.com/GUCCI/app_529020123814834",
+      "img": "http://hunt4freebies.com/wp-content/uploads/2012/04/Gucci-Flora-Garden.png"
+    }
+  },
+  {
+    "_id": "5250faf45705313ae1e977fc",
+    "item": {
+      "category": "Beauty",
+      "type": "fragrance"
+    },
+    "name": "Kate Spade Live Colorfully Fragrance Sample",
+    "urls": {
+      "link": "https://www.facebook.com/katespade/app_100419130151251",
+      "img": "http://hunt4freebies.com/wp-content/uploads/2013/03/Kate-Spade-Live-Colorfully-Fragrance.png"
+    }
+  },
+  {
+    "_id": "5250faf75705313ae1e97805",
+    "item": {
+      "category": "Beauty",
+      "type": "skincare"
+    },
+    "name": "Sample of Clarins Double Serum",
+    "urls": {
+      "link": "https://www.facebook.com/ClarinsUS/app_485958561454298",
+      "img": "http://hunt4freebies.com/wp-content/uploads/2013/01/Clarins-Double-Serum.png"
+    }
+  },
+  {
+    "_id": "5250faf95705313ae1e9780f",
+    "item": {
+      "category": "Beauty",
+      "type": "fragrance"
+    },
+    "name": "Gucci Premiere Fragrance Sample",
+    "urls": {
+      "link": "https://esc.cocomore.com/zesnc/esampling/fragrance_gucci_premiere_spl1208/registration/register/en_GB",
+      "img": "http://hunt4freebies.com/wp-content/uploads/2012/09/Gucci-Premiere-Fragrance.png"
+    }
+  },
+  {
+    "_id": "5250faf95705313ae1e97810",
+    "item": {
+      "category": "Beauty",
+      "type": "fragrance"
+    },
+    "name": "Issey Miyake L’eau D’issey Pour Homme Sport Men’s Fragrance Sample",
+    "urls": {
+      "link": "http://www.sport-emotions.com/en/take-a-deep-breath/",
+      "img": "http://hunt4freebies.com/wp-content/uploads/2012/09/Issey-Miyake.png"
+    }
+  },
+  {
+    "_id": "5250faf95705313ae1e97811",
+    "item": {
+      "category": "Beauty",
+      "type": "haircare"
+    },
+    "name": "Sample of Paul Mitchells Curls Collection",
+    "urls": {
+      "link": "http://thetruthaboutcurls.com/#/confession/submit",
+      "img": "http://hunt4freebies.com/wp-content/uploads/2012/09/Paul-Mitchells-Curls-Collection.png"
+    }
+  },
+  {
+    "_id": "525114345705313ae1e97817",
+    "item": {
+      "category": "Beauty",
+      "type": "skincare"
+    },
+    "name": "e of Flexitol Heel Balm",
+    "urls": {
+      "link": "href=\"http://www.flexitol.com/us/products/foot-care/heel-balm\"",
+      "img": "src=\"http://www.freestufffinder.com/wp-content/uploads/2012/08/free-sample-flexitol-balm.png"
+    }
+  },
+  {
+    "_id": "525114345705313ae1e97819",
+    "item": {
+      "category": "Beauty",
+      "type": "supplement"
+    },
+    "name": "e of Visi Weight Loss Supplement",
+    "urls": {
+      "link": "href=\"http://app.bombbomb.com/app/form/?form_id=715cf17b-be1d-4115-bf62-a3d2a500e980\"",
+      "img": "src=\"http://www.freestufffinder.com/wp-content/uploads/2013/08/free-visi.jpg"
+    }
+  },
+  {
+    "_id": "5251143a5705313ae1e9781b",
+    "item": {
+      "category": "Beauty",
+      "type": "skincare"
+    },
+    "name": "e of Biore Deep Cleansing Skincare",
+    "urls": {
+      "link": "href=\"https://www.facebook.com/bioreskin/posts/10151698138224265\"",
+      "img": "src=\"http://www.freestufffinder.com/wp-content/uploads/2013/06/Free-Sample-Biore-Deep-Cleansing-Skincare-290x300.jpg"
+    }
+  }
+];
+
+var json_food = [{
+    "_id": "5250faed5705313ae1e977d2",
+    "item": {
+      "category": "Food and Drink",
+      "type": "tea"
+    },
+    "name": "Samples of Twinings Tea",
+    "urls": {
+      "link": "http://pantry.twiningsusa.com/?utm_source=GoodHousekeeping&amp;utm_medium=Ad&amp;utm_campaign=Pantry2013",
+      "img": "http://hunt4freebies.com/wp-content/uploads/2012/09/Twinings.png"
+    }
+  },
+  {
+    "_id": "5250faed5705313ae1e977d4",
+    "item": {
+      "category": "Food and Drink",
+      "type": "sweetener"
+    },
+    "name": "Sample of Truvia Natural Sweetener",
+    "urls": {
+      "link": "http://truvia.com/products/eclubpromotions",
+      "img": "http://hunt4freebies.com/wp-content/uploads/2013/05/Truvia-Natural-Sweetener.png"
+    }
+  },
+  {
+    "_id": "5250faed5705313ae1e977d5",
+    "item": {
+      "category": "Food and Drink",
+      "type": "sweetener"
+    },
+    "name": "Splenda Nectresse No Calorie Sweetener Sample Pack",
+    "urls": {
+      "link": "http://partners.mysavings.com/z/23861/CD105/",
+      "img": "http://hunt4freebies.com/wp-content/uploads/2012/06/Nectresse.png"
+    }
+  },
+  {
+    "_id": "5250faed5705313ae1e977d6",
+    "item": {
+      "category": "Food and Drink",
+      "type": "beverage"
+    },
+    "name": "4-Pack of Dream Water",
+    "urls": {
+      "link": "http://ctitbytrk.com/?a=262&amp;oc=871&amp;c=7902&amp;s1=",
+      "img": "http://hunt4freebies.com/wp-content/uploads/2013/07/Dream-Water.png"
+    }
+  },
+  {
+    "_id": "5250faed5705313ae1e977d7",
+    "item": {
+      "category": "Food and Drink",
+      "type": "snacks"
+    },
+    "name": "Fit Crunch Bar Sample!",
+    "urls": {
+      "link": "http://www.fitcrunchbars.com/freebar/",
+      "img": "http://hunt4freebies.com/wp-content/uploads/2013/08/fit-crunch-bars.png"
+    }
+  },
+  {
+    "_id": "5250faf05705313ae1e977e8",
+    "item": {
+      "category": "Food and Drink",
+      "type": "seasoning"
+    },
+    "name": "Bragg Sprinkle &amp; Sea Kelp Delight Seasonings",
+    "urls": {
+      "link": "http://www.bragg.com/general/FSredirect.php",
+      "img": "http://hunt4freebies.com/wp-content/uploads/2010/06/Bragg-Certified-Organic-Seasonings.png"
+    }
+  },
+  {
+    "_id": "5250faf05705313ae1e977e9",
+    "item": {
+      "category": "Food and Drink"
+    },
+    "name": "NOW Real Food Slender Stick Sample",
+    "urls": {
+      "link": "https://www.facebook.com/nowfoodsofficial/app_241321439259320",
+      "img": "http://hunt4freebies.com/wp-content/uploads/2013/07/slender-sticks.png"
+    }
+  },
+  {
+    "_id": "5250faf05705313ae1e977ea",
+    "item": {
+      "category": "Food and Drink",
+      "type": "coffee"
+    },
+    "name": "Sample of Gevalia Coffee",
+    "urls": {
+      "link": "https://prefer-a-friend.gevalia.com/form/",
+      "img": "http://hunt4freebies.com/wp-content/uploads/2013/04/Gevalia-HouseBlend.png"
+    }
+  },
+  {
+    "_id": "5250faf05705313ae1e977ec",
+    "item": {
+      "category": "Food and Drink",
+      "type": "beverage"
+    },
+    "name": "Sample of Jimmy Juice",
+    "urls": {
+      "link": "http://www.jimmyjuice.net/sample.php",
+      "img": "http://hunt4freebies.com/wp-content/uploads/2013/05/Jimmy-Juice.png"
+    }
+  },
+  {
+    "_id": "5250faf05705313ae1e977ed",
+    "item": {
+      "category": "Food and Drink",
+      "type": "seasoning"
+    },
+    "name": "Sample of Spike Seasoning Magics",
+    "urls": {
+      "link": "https://www.facebook.com/SpikeSeasoningMagics/app_190322544333196",
+      "img": "http://hunt4freebies.com/wp-content/uploads/2013/04/Spike-Seasoning-Magics.png"
+    }
+  },
+  {
+    "_id": "5250faf05705313ae1e977ee",
+    "item": {
+      "category": "Food and Drink",
+      "type": "coffee"
+    },
+    "name": "Half Gallon of Silk Iced Latte",
+    "urls": {
+      "link": "https://www.facebook.com/SilkUS?sk=app_490840920967220",
+      "img": "http://hunt4freebies.com/wp-content/uploads/2013/03/Silk-Iced-Latte.png"
+    }
+  },
+  {
+    "_id": "5250faf35705313ae1e977f6",
+    "item": {
+      "category": "Food and Drink"
+    },
+    "name": "Sample Beyond Eggs Product",
+    "urls": {
+      "link": "http://lnc.hr/d0GY4",
+      "img": "http://hunt4freebies.com/wp-content/uploads/2013/03/Hampton-Creek-Foods.png"
+    }
+  },
+  {
+    "_id": "5250faf35705313ae1e977f7",
+    "item": {
+      "category": "Food and Drink"
+    },
+    "name": "Honey Nut Cheerios Medley for Live Better America Members",
+    "urls": {
+      "link": "https://www.livebetteramerica.com/coupons/membersamples?",
+      "img": "http://hunt4freebies.com/wp-content/uploads/2013/01/Honey-Nut-Cheerios-with-Medley-Crunch-Cereal.jpg"
+    }
+  },
+  {
+    "_id": "5250faf35705313ae1e977f8",
+    "item": {
+      "category": "Food and Drink",
+      "type": "beverage"
+    },
+    "name": "Body By Vi V-shape Shake Sample",
+    "urls": {
+      "link": "http://changemylifein90days.com/sample/",
+      "img": "http://hunt4freebies.com/wp-content/uploads/2012/12/Body-By-Vi-V-shape-Shake.png"
+    }
+  },
+  {
+    "_id": "5250faf35705313ae1e977f9",
+    "item": {
+      "category": "Food and Drink",
+      "type": "coffee"
+    },
+    "name": "Sample of Odacrem Coffee Beans",
+    "urls": {
+      "link": "http://www.odacremcoffee.com/sample-request.html",
+      "img": "http://hunt4freebies.com/wp-content/uploads/2013/02/odacrem-coffee.png"
+    }
+  },
+  {
+    "_id": "5250faf35705313ae1e977fa",
+    "item": {
+      "category": "Food and Drink",
+      "type": "tea"
+    },
+    "name": "Herbal Papaya Organic Tea Sample",
+    "urls": {
+      "link": "http://www.herbalpapaya.com/free-sample.html",
+      "img": "http://hunt4freebies.com/wp-content/uploads/2012/12/Herbal-Papaya-Organic-Tea.png"
+    }
+  },
+  {
+    "_id": "5250faf65705313ae1e97803",
+    "item": {
+      "category": "Food and Drink",
+      "type": "tea"
+    },
+    "name": "Sample of ThirsTea",
+    "urls": {
+      "link": "https://www.facebook.com/ThirsTea/posts/401840696568342",
+      "img": "http://hunt4freebies.com/wp-content/uploads/2013/01/ThirsTea-Beverages.png"
+    }
+  },
+  {
+    "_id": "5250faf65705313ae1e97804",
+    "item": {
+      "category": "Food and Drink",
+      "type": "beverage"
+    },
+    "name": "Propel Zero Powder Stick Sample Pack",
+    "urls": {
+      "link": "https://www.facebook.com/propel/app_235344616573100",
+      "img": "http://hunt4freebies.com/wp-content/uploads/2012/05/Propel-Zero-Powder-Stick.png"
+    }
+  },
+  {
+    "_id": "5250faf85705313ae1e9780b",
+    "item": {
+      "category": "Food and Drink",
+      "type": "snacks"
+    },
+    "name": "Yoplait Yogurt for Live Better America Members",
+    "urls": {
+      "link": "http://lbasamplingyoplait.livebetteramerica.com/Register.aspx",
+      "img": "http://hunt4freebies.com/wp-content/uploads/2012/11/LBA-Yoplait.png"
+    }
+  },
+  {
+    "_id": "5250faf95705313ae1e9780c",
+    "item": {
+      "category": "Food and Drink"
+    },
+    "name": "Kashi Chocolate Soft-Baked Squares",
+    "urls": {
+      "link": "https://www.facebook.com/kashi/app_420411861352804",
+      "img": "http://hunt4freebies.com/wp-content/uploads/2012/09/Kashi-Chocolate-Soft-Baked-Squares.png"
+    }
+  },
+  {
+    "_id": "5250faf95705313ae1e9780d",
+    "item": {
+      "category": "Food and Drink",
+      "type": "tea"
+    },
+    "name": "Sample of Yorkshire Gold Tea",
+    "urls": {
+      "link": "https://www.facebook.com/yorkshiretea/app_100986888577",
+      "img": "http://hunt4freebies.com/wp-content/uploads/2012/10/Yorkshire-Gold-Tea.png"
+    }
+  },
+  {
+    "_id": "5250faf95705313ae1e9780e",
+    "item": {
+      "category": "Food and Drink"
+    },
+    "name": "Cascadian Farms Granola Sample for Live Better America Members",
+    "urls": {
+      "link": "http://granolacerealsampling.livebetteramerica.com/Register.aspx",
+      "img": "http://hunt4freebies.com/wp-content/uploads/2012/10/Cascadian-Farms-Granola.png"
+    }
+  },
+  {
+    "_id": "525114375705313ae1e9781a",
+    "item": {
+      "category": "Food and Drink"
+    },
+    "name": "e of Peppermint Puff candy",
+    "urls": {
+      "link": "href=\"http://www.freepuff.com/\"",
+      "img": "src=\"http://www.freestufffinder.com/wp-content/uploads/2013/10/peppermintpuff-300x161.png"
+    }
+  },
+  {
+    "_id": "5251143c5705313ae1e9781c",
+    "item": {
+      "category": "Food and Drink",
+      "type": "seasoning"
+    },
+    "name": "e of Slavo Salt Gourmet Seasoning",
+    "urls": {
+      "link": "href=\"http://slavosalt.com/free-sample/\"",
+      "img": "src=\"http://www.freestufffinder.com/wp-content/uploads/2013/10/Screen-Shot-2013-10-02-at-2.22.11-PM.png"
+    }
+  },
+  {
+    "_id": "5251143c5705313ae1e9781d",
+    "item": {
+      "category": "Food and Drink",
+      "type": "tea"
+    },
+    "name": "erbal Quit Smoking Aid Tea Bag Sample",
+    "urls": {
+      "link": "href=\"http://www.quitsmoking.com/offers/quit_tea\"",
+      "img": "src=\"http://www.freestufffinder.com/wp-content/uploads/2012/07/free-quit-smoking-tea.png"
+    }
+  },
+  {
+    "_id": "5251143c5705313ae1e9781e",
+    "item": {
+      "category": "Food and Drink"
+    },
+    "name": "e of Progresso Soup",
+    "urls": {
+      "link": "href=\"https://www.boxtops4education.com/login?redirectUrl=%2fmembersamples%3f%26RegAction%3dMemberSamples_Progresso-Soup-September-2013%26nicam2%3dEmail%26nichn2%3dCore%26niseg2%3dBTFE%26nicreatID2%3dBTFE_09_25_2013\"",
+      "img": "src=\"http://www.freestufffinder.com/wp-content/uploads/2013/09/Free-Sample-Progresso-Soup-300x300.jpg"
+    }
+  },
+  {
+    "_id": "525114415705313ae1e9781f",
+    "item": {
+      "category": "Food and Drink"
+    },
+    "name": "e of Wise Company&#8217;s ready-to-eat foods",
+    "urls": {
+      "link": "href=\"http://wisefoodstorage.com/try-a-sample\"",
+      "img": "src=\"http://www.freestufffinder.com/wp-content/uploads/2013/02/Free-Sample-Wise-Company-Foods.jpg"
+    }
+  },
+  {
+    "_id": "525114475705313ae1e97820",
+    "item": {
+      "category": "Food and Drink",
+      "type": "seasoning"
+    },
+    "name": "e Pack of Mrs Dash Taco or Chili Seasoning Mix",
+    "urls": {
+      "link": "href=\"https://www.facebook.com/Mrs.DashRecipes/app_568605649841543\"",
+      "img": "src=\"http://www.freestufffinder.com/wp-content/uploads/2013/09/Mrs-Dash-Taco-or-Chili-Seasoning-Mix.png"
+    }
+  },
+  {
+    "_id": "5251144c5705313ae1e97821",
+    "item": {
+      "category": "Food and Drink",
+      "type": "snacks"
+    },
+    "name": "ples of Atkins Bars",
+    "urls": {
+      "link": "href=\"http://community.atkins.com/Registration.aspx\"",
+      "img": "src=\"http://www.freestufffinder.com/wp-content/uploads/2012/05/Free-Atkins-Bars-and-guide-291x300.png"
+    }
+  }
+];
+
+var json_health = [{
+    "_id": "5250faef5705313ae1e977e2",
+    "item": {
+      "category": "Health and Hygiene"
+    },
+    "name": "Sample Pack of Hangover Salvation",
+    "urls": {
+      "link": "https://www.facebook.com/hangoversalvation/app_101393123286933",
+      "img": "http://hunt4freebies.com/wp-content/uploads/2013/09/Hangover-Salvation.png"
+    }
+  },
+  {
+    "_id": "5250faef5705313ae1e977e3",
+    "item": {
+      "category": "Health and Hygiene",
+      "type": "for her"
+    },
+    "name": "First Response Early Pregnancy Test, Fertility Test And Digital Ovulation Test Kit",
+    "urls": {
+      "link": "http://www.fertilehope.org/firstresponse.cfm",
+      "img": "http://hunt4freebies.com/wp-content/uploads/2013/10/First-Response.png"
+    }
+  },
+  {
+    "_id": "5250faef5705313ae1e977e4",
+    "item": {
+      "category": "Health and Hygiene",
+      "type": "toiletries"
+    },
+    "name": "Sample of Sensodyne Extra Whitening Toothpaste for Costco Members",
+    "urls": {
+      "link": "http://www.costco.com/FREE-Sample-Sensodyne/5C2/5AE-Extra-Whitening-Toothpaste/52c-0.8-oz..product.100040817.html",
+      "img": "http://hunt4freebies.com/wp-content/uploads/2013/09/Sensodyne-Extra-Whitening-Toothpaste.png"
+    }
+  },
+  {
+    "_id": "5250faef5705313ae1e977e5",
+    "item": {
+      "category": "Health and Hygiene",
+      "type": "supplements"
+    },
+    "name": "Airborne Health Samples",
+    "urls": {
+      "link": "http://samples.target.com/?1",
+      "img": "http://hunt4freebies.com/wp-content/uploads/2012/11/Airborne-Chewables.png"
+    }
+  },
+  {
+    "_id": "5250faef5705313ae1e977e6",
+    "item": {
+      "category": "Health and Hygiene"
+    },
+    "name": "Trojan Lubricant Sample",
+    "urls": {
+      "link": "http://www.trojanlubricants.com/TrojanComeTogether/",
+      "img": "http://hunt4freebies.com/wp-content/uploads/2013/10/Trojan-Lubricant.png"
+    }
+  },
+  {
+    "_id": "5250faf05705313ae1e977eb",
+    "item": {
+      "category": "Health and Hygiene",
+      "type": "supplements"
+    },
+    "name": "Sample Of Jelly Kids Vitamins",
+    "urls": {
+      "link": "http://www.jellykidz.com/samplesignup.php",
+      "img": "http://hunt4freebies.com/wp-content/uploads/2012/07/Jelly-Kids.png"
+    }
+  },
+  {
+    "_id": "5250faf25705313ae1e977f2",
+    "item": {
+      "category": "Health and Hygiene"
+    },
+    "name": "Breathe Right Advanced Strips Sample",
+    "urls": {
+      "link": "http://www.breatheright.com/freesample.promo",
+      "img": "http://hunt4freebies.com/wp-content/uploads/2012/10/Breathe-Right1.png"
+    }
+  },
+  {
+    "_id": "5250faf25705313ae1e977f3",
+    "item": {
+      "category": "Health and Hygiene"
+    },
+    "name": "Bayer Contour Glucose Meter",
+    "urls": {
+      "link": "http://www.eatwell-testwell.com/registration_step1",
+      "img": "http://hunt4freebies.com/wp-content/uploads/2013/08/Bayer-Contour-Glucose-Meter.png"
+    }
+  },
+  {
+    "_id": "5250faf25705313ae1e977f4",
+    "item": {
+      "category": "Health and Hygiene",
+      "type": "supplements"
+    },
+    "name": "Midnite Sleep Supplement Sample",
+    "urls": {
+      "link": "http://www.midnitesleep.com/entertainment-weekly/",
+      "img": "http://hunt4freebies.com/wp-content/uploads/2013/09/MidNite.png"
+    }
+  },
+  {
+    "_id": "5250faf55705313ae1e977fd",
+    "item": {
+      "category": "Health and Hygiene",
+      "type": "for her"
+    },
+    "name": "Tena Products Sample Pack",
+    "urls": {
+      "link": "https://www.tena.us/on/demandware.store/Sites-Tena_US-Site/en_US/TrialRequest-Start",
+      "img": "http://hunt4freebies.com/wp-content/uploads/2013/04/Tena-Wipes.png"
+    }
+  },
+  {
+    "_id": "5250faf55705313ae1e977fe",
+    "item": {
+      "category": "Health and Hygiene"
+    },
+    "name": "Nova Max Blood Glucose Meter",
+    "urls": {
+      "link": "http://www.novacares.com/free_meter.php",
+      "img": "http://hunt4freebies.com/wp-content/uploads/2013/09/Nova-Max-Blood-Glucose-Meter.png"
+    }
+  },
+  {
+    "_id": "5250faf55705313ae1e97800",
+    "item": {
+      "category": "Health and Hygiene"
+    },
+    "name": "Sample of RepHresh Gel",
+    "urls": {
+      "link": "https://www.facebook.com/rephreshproducts/app_119418044857596",
+      "img": "http://hunt4freebies.com/wp-content/uploads/2013/08/RepHresh-Gel.png"
+    }
+  },
+  {
+    "_id": "5250faf55705313ae1e97801",
+    "item": {
+      "category": "Health and Hygiene"
+    },
+    "name": "FreeStyle InsuLinx Blood Glucose Meter",
+    "urls": {
+      "link": "https://www.freestyleinsulinx.us/free-freestyle-insulinx-meter-offer.html?animationSection=home:no-hotspot%20clicked",
+      "img": "http://hunt4freebies.com/wp-content/uploads/2013/04/freestyle-insulinx.png"
+    }
+  },
+  {
+    "_id": "5250faf55705313ae1e97802",
+    "item": {
+      "category": "Health and Hygiene"
+    },
+    "name": "Sample of Dramamine",
+    "urls": {
+      "link": "http://roadwarrioralliance.com/Get%20a%20Sample.aspx",
+      "img": "http://hunt4freebies.com/wp-content/uploads/2013/08/Dramamine.png"
+    }
+  },
+  {
+    "_id": "5250faf85705313ae1e97806",
+    "item": {
+      "category": "Health and Hygiene"
+    },
+    "name": "Sample of Astroglide Personal",
+    "urls": {
+      "link": "http://www.smartsource.com/smartsource/operations/samples/Astroglide_Sample_2013.html",
+      "img": "http://hunt4freebies.com/wp-content/uploads/2013/03/Astroglide1.png"
+    }
+  },
+  {
+    "_id": "5250faf85705313ae1e97807",
+    "item": {
+      "category": "Health and Hygiene",
+      "type": "supplements"
+    },
+    "name": "Sample Pack of Emergen-C Kidz",
+    "urls": {
+      "link": "http://www.emergenc.com/free-samples",
+      "img": "http://hunt4freebies.com/wp-content/uploads/2012/02/Emergen-C-Kidz1.png"
+    }
+  },
+  {
+    "_id": "5250faf85705313ae1e97808",
+    "item": {
+      "category": "Health and Hygiene"
+    },
+    "name": "Sample of Bony Acai Energy Sticks",
+    "urls": {
+      "link": "http://bonyacaiusa.com/sample/",
+      "img": "http://hunt4freebies.com/wp-content/uploads/2013/08/Bony-Acai-Energy-Sticks.png"
+    }
+  },
+  {
+    "_id": "5250faf85705313ae1e97809",
+    "item": {
+      "category": "Health and Hygiene"
+    },
+    "name": "Sample of Elmore Oil",
+    "urls": {
+      "link": "http://elmore-oil.com/shop/free-sample/",
+      "img": "http://hunt4freebies.com/wp-content/uploads/2013/08/Elmore-Oil.png"
+    }
+  },
+  {
+    "_id": "5250faf85705313ae1e9780a",
+    "item": {
+      "category": "Health and Hygiene",
+      "type": "supplements"
+    },
+    "name": "Sample of Oxylent Prenatal Multivitamin Drink",
+    "urls": {
+      "link": "http://www.vitalah.com/prenatal_freesample.php",
+      "img": "http://hunt4freebies.com/wp-content/uploads/2013/09/Oxylent-Prenatal-Multivitamin-Drink.png"
+    }
+  },
+  {
+    "_id": "5250fafa5705313ae1e97812",
+    "item": {
+      "category": "Health and Hygiene",
+      "type": "for her"
+    },
+    "name": "Sample of Shinymode Feminine Pads",
+    "urls": {
+      "link": "http://www.shinymode.com/p/53/day-use-free-sample",
+      "img": "http://hunt4freebies.com/wp-content/uploads/2013/09/Shinymode-Feminine-Pads.png"
+    }
+  },
+  {
+    "_id": "5250fafa5705313ae1e97813",
+    "item": {
+      "category": "Health and Hygiene",
+      "type": "supplements"
+    },
+    "name": "Sample of Visi Weight Loss Supplement",
+    "urls": {
+      "link": "http://vid.us/2ywg0",
+      "img": "http://hunt4freebies.com/wp-content/uploads/2012/07/Visi-Weight-Loss.png"
+    }
+  },
+  {
+    "_id": "5250fafa5705313ae1e97814",
+    "item": {
+      "category": "Health and Hygiene",
+      "type": "protein"
+    },
+    "name": "Muscletech Weight Lifting Supplement Sample",
+    "urls": {
+      "link": "http://www.muscletech.com/samples/",
+      "img": "http://hunt4freebies.com/wp-content/uploads/2012/08/Muscletech-Weight-Lifting-Supplement.png"
+    }
+  },
+  {
+    "_id": "5250fafa5705313ae1e97815",
+    "item": {
+      "category": "Health and Hygiene",
+      "type": "supplements"
+    },
+    "name": "Sample of ZAMboost Immune Support Supplement",
+    "urls": {
+      "link": "http://zamboost.com/try-zamboost",
+      "img": "http://hunt4freebies.com/wp-content/uploads/2013/08/ZAMboost.png"
+    }
+  },
+  {
+    "_id": "5250fafa5705313ae1e97816",
+    "item": {
+      "category": "Health and Hygiene",
+      "type": "supplements"
+    },
+    "name": "Sample of Schiff Move Free Ultra Omega Supplement",
+    "urls": {
+      "link": "https://www.facebook.com/SchiffMoveFree/app_140230486162855",
+      "img": "http://hunt4freebies.com/wp-content/uploads/2013/05/Schiff-Move-Free-Ultra-Omega-Supplement.png"
+    }
+  },
+  {
+    "_id": "525114345705313ae1e97818",
+    "item": {
+      "category": "Health and Hygiene",
+      "type": "toiletries"
+    },
+    "name": "e of Herbal Essences Body Burst Body Wash",
+    "urls": {
+      "link": "href=\"http://www.pgbrandsampler.com/select-coupons-samples-by-mail.jsp?brand=eds_brandsampler&amp;referrer=null\"",
+      "img": "src=\"http://www.freestufffinder.com/wp-content/uploads/2013/07/herbals-300x285.png"
+    }
+  },
+  {
+    "_id": "5251144f5705313ae1e97822",
+    "item": {
+      "category": "Health and Hygiene"
+    },
+    "name": "sample of Astroglide Lubricant",
+    "urls": {
+      "link": "href=\"http://www.astroglide.com/FreeSample/#\"",
+      "img": "src=\"http://www.freestufffinder.com/wp-content/uploads/2012/10/free-astroglide-sample-258x300.png"
+    }
+  },
+  {
+    "_id": "5251144f5705313ae1e97823",
+    "item": {
+      "category": "Health and Hygiene",
+      "type": "for her"
+    },
+    "name": "es of Poise Pads",
+    "urls": {
+      "link": "href=\"http://www.poise.com/samples?type=3\"",
+      "img": "src=\"http://www.freestufffinder.com/wp-content/uploads/2012/05/Free-Sample-Poise-Maxi-Pads.png"
+    }
+  },
+  {
+    "_id": "525114525705313ae1e97824",
+    "item": {
+      "category": "Health and Hygiene"
+    },
+    "name": "e samples of Pink Intimate Lubricants",
+    "urls": {
+      "link": "href=\"https://www.pinkforus.com/request.php\"",
+      "img": "src=\"http://www.freestufffinder.com/wp-content/uploads/2012/08/free-pink-lubricant-300x252.jpg"
+    }
+  },
+  {
+    "_id": "525114525705313ae1e97825",
+    "item": {
+      "category": "Health and Hygiene"
+    },
+    "name": "e of Stayfree Ultra Thin with Wings",
+    "urls": {
+      "link": "href=\"http://www.stayfree.com/special?utm_source=newsletter&amp;utm_medium=email&amp;utm_campaign=may12_stayfree_email&amp;fb_source=message\"",
+      "img": "src=\"http://freestufffinder.com/wp-content/uploads/2012/05/Free-Stayfree-Ultra-Thin-Sample.png"
+    }
+  },
+  {
+    "_id": "5250faf55705313ae1e977ff",
+    "item": {
+      "category": "Health and Hygiene",
+      "type": "for her"
+    },
+    "name": "Sample of U by Kotex",
+    "urls": {
+      "link": "http://www.ubykotex.com/get-a-sample",
+      "img": "http://hunt4freebies.com/wp-content/uploads/2012/06/U-by-Kotex.png"
+    }
+  }
+];
+
+var json_current;
+var rand = Math.random()*3;
+if(rand < 1)
+  json_current = json_beauty;
+else if(rand < 2)
+  json_current = json_food;
+else
+  json_current = json_health;
+
+function resetTables() {
+  document.getElementById('listItems').innerHTML = '<table border = "0" id = "myTable" class="table"><thead><tr></tr></thead><tbody></tbody></table>';
+}
+
+var count = Math.floor(19 * Math.random());
   $(document).ready(function() {
-    $(".nav-expander").click(function(event) {
-      if (count % 2 == 0) {
-        $(".secondnavbar").animate({
-          "marginTop":"55px"}, 500);
-        $(".everything").animate({
-          "marginTop":"55px"}, 500);
-        count +=1;
-      }
-      else{
-        $(".secondnavbar").animate({
-          "marginTop":"0px"}, 500);
-        $(".everything").animate({
-          "marginTop":"0px"}, 500);
-        count -=1;
-      }
+    $(".food").click(function(event) {
+      json_current = json_food;
+      resetTables();
+      addElements();
+    });
+    $(".health").click(function(event) {
+      json_current = json_health;
+      resetTables();
+      addElements();
+    });
+    $(".beauty").click(function(event) {
+      json_current = json_beauty;
+      resetTables();
+      addElements();
     });
   });
 
   $(document).ready(function() {
+      addElements();
       $(".twentyMore").click(function(event) {
         addElements();
     });
   });
 
-  function addElement(){
+  function addElement(obj){
     var table = document.getElementById("myTable");
     var lastRow = table.rows[table.rows.length - 1];
     if(lastRow.cells.length == 4){
       lastRow = table.insertRow(-1);
     }
     var cell = lastRow.insertCell(-1);
-    var image = '<img class="swagpic" src="generic.png" alt="">'
-    var draggable = '<div class="ui-widget-content draggable">' + image +  '</div>'
-    cell.innerHTML = draggable
+    var pinterest_str = '<a href="http://www.pinterest.com/pin/create/button/?url=' + obj["urls"]["link"] + '&media=' + obj["urls"]["img"] + '&description=' + obj["name"] + ' data-pin-do="buttonPin" data-pin-config="above"><img src="//assets.pinterest.com/images/pidgets/pin_it_button.png" /></a>';
+    var image = '<div align="center"><a href="' + obj['urls']['link'] + '" title= "' + obj['name'] + '"><img align="center" class="swagpic" src="' + obj['urls']['img'] + '" alt=""></a></div>' + pinterest_str;
+    var draggable = '<div class="ui-widget-content draggable">' + image +  '</div>';
+    cell.innerHTML = draggable;
     $(function() {
       $( ".draggable" ).draggable();
-      $( ".draggable" ).draggable({ containment: "document", opacity: 0.8, refreshPositions: true, revert: "invalid", scroll: false});
+      $( ".draggable" ).draggable({ containment: "document", opacity: 0.95, refreshPositions: true, revert: "invalid", scroll: false, zIndex: 1000});
     });
   }
 
 function addElements() {
   for(var i = 0; i < 20; i++) {
-    addElement();
+    addElement(json_current[count]);
+    count+=1;
+    if (count >= json_current.length - 7) {
+      count = 0;
+    }
   }
 }
-
 
 </script>
 
@@ -223,6 +1232,6 @@ function addElements() {
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
 
-
+<script type="text/plain" src="http://assets.pinterest.com/js/pinit.js"></script>
 </body>
 </html>
